@@ -1,6 +1,6 @@
 from flask import Flask, render_template, url_for, request, redirect
-from app.Helper.ConstantesParametro import ConstantesParametro
-from app.Helper.Validate import Validate
+from Helper.ConstantesParametro import ConstantesParametro
+from Helper.Validate import Validate
 
 app = Flask(__name__)
 
