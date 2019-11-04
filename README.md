@@ -1,1 +1,10 @@
-# Projeto_de_mircro_servicos
+# Fabrica
+
+### Install Flask
+```bash 
+pip install Flask
+```
+### Para conectar ao SQL
+```bash
+pip install pyodbc
+```

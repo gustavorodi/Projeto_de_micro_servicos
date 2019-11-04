@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Cache-Control" content="no-store" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.css', v=0.04) }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css', v=0.03) }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css.map', v=0.03) }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/estilo.css', v=0.03) }}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>TÍTULO Registrar</title>
+</head>
+<body>
+    <form class="form-position-register dimension-input" action="{{ url_for('registrar') }}" method="POST">
+        <div class="form-group">
+            <label for="user-name">Nome do usuário</label>
+            <input type="userName" class="form-control" value="nome" id="user-name" placeholder="Usuário">
+        </div>
+        <div class="form-group">
+          <label for="email-input">Endereço de email</label>
+          <input type="email" class="form-control" id="email-input" aria-describedby="emailHelp" placeholder="Email">
+        </div>
+        <div class="form-group">
+          <label for="password-input">Senha</label>
+          <input id="password-input"  type="password" class="form-control" placeholder="Senha">
+        </div>
+        <div class="form-group">
+            <label for="password-input">Confirmar Senha</label>
+            <input id="password-input-2" type="password" class="form-control placeholder="Senha">
+        </div>
+        <button type="submit" class="btn btn-primary">Registrar</button>
+      </form>
+</body>
+</html>

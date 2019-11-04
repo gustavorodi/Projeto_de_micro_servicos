@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css?family=Darker+Grotesque&display=swap');
+
+body {
+    font-family: 'Darker Grotesque', sans-serif;
+    background-image: url("");
+    background-repeat: no-repeat;
+    background-size: cover
+}
+
+#bt-register {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background-color: #9C9C9C;  
+}
+
+#bt-login {
+    position: absolute;
+    top: 8px;
+    right: 95px;
+    background-color: #9C9C9C;
+}
+
+#begin {
+    background-image: url('');   
+    padding: 25px;
+}
+
+#text-index {
+    text-align: center;
+    color: #FFE7BA;
+}
+
+#div-index {
+    height: 100vh;
+    background-image: url('');
+    background-repeat: repeat;
+}
+
+#rodape {
+    background-image: url('');
+    padding-bottom: 70px; 
+    position: relative;
+    bottom: 0%;
+}
+
+.div-test {
+    background-color: red;
+}
+
+.input-input {
+    width: 250px;   
+}
+
+.center-aling {
+    margin-left: auto;
+    margin-right: auto
+}
+
+.dimension-input {
+    width: 280px;
+    position: absolute;
+    left: 50%;
+    margin-left: -140px;
+}
+
+.form-position {
+    position: absolute;
+    top: 50%;
+    margin-top: -92px;
+}
+
+.form-position-register {
+    position: absolute;
+    top: 50%;
+    margin-top: -172px;
+}
+
+
+

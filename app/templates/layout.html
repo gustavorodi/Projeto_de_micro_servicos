@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.css', v=0.04) }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css', v=0.03) }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css.map', v=0.03) }}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/estilo.css', v=0.05) }}">
+</head>
+<body>
+  {% include 'header.html' %}
+  {% block content %}
+
+  {% endblock %}
+  {% include 'rodape.html' %}
+</body>
+</html>
