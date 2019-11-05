@@ -1,4 +1,4 @@
-from flask import Flask, render_template, url_for, request, redirect
+from flask import Flask, render_template, url_for, request, redirect, jsonify
 from Helper.ConstantesParametro import ConstantesParametro
 from Helper.Validate import Validate
 
@@ -45,6 +45,13 @@ def registrar():
 @app.route("/usuarioIndex")
 def usuarioIndex():
     return render_template('usuarioIndex.html')
+
+@app.route("/cadastrar-contato", methods=['POST'])
+def cadastrar_contato():
+    print("test ")
+    return jsonify(
+        form = request.form
+    )
 
 @app.errorhandler(404)
 def page_not_found(error):

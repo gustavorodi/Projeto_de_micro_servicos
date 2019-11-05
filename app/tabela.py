@@ -6,13 +6,14 @@ cursor = conn.cursor()
 
 
 cursor.execute("""
-    CREATE TABLE database (
+    CREATE TABLE contatos (
         id INTEGER NOT NULL PRIMARY KEY,
         nome TEXT NOT NULL,
-        email TEXT NOT NULL,
-        senha TEXT NOT NULL
+        email TEXT NOT NULL
     );
 """)
+
+
 
 print('Tabela criada')
 conn.close()
