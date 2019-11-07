@@ -8,9 +8,9 @@ app = Flask(__name__)
 def index():
 
     eventos = [
-        {"nome": "Evento 1", "endereco":"Rua ...." , "descricao": "descricao", "horario": "10:00"},
-        {"nome": "Evento 2", "endereco":"Rua ...." , "descricao": "descricao", "horario": "10:00"},
-        {"nome": "Evento 2", "endereco":"Rua ...." , "descricao": "descricao", "horario": "10:00"},
+        {"nome": "Evento 1", "endereco":"Rua ...." , "descricao": "descricao","data": "21/11/2019" ,"horario": "10:00"},
+        {"nome": "Evento 2", "endereco":"Rua ...." , "descricao": "descricao","data": "21/11/2019" ,"horario": "10:00"},
+        {"nome": "Evento 2", "endereco":"Rua ...." , "descricao": "descricao","data": "21/11/2019" ,"horario": "10:00"},
     ]
     return render_template('index.html', nomeSite="Eventoss", data=eventos)
 
