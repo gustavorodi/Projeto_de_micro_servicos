@@ -6,7 +6,13 @@ app = Flask(__name__)
 
 @app.route("/")
 def index():
-    return render_template('index.html')
+
+    eventos = [
+        {"nome": "Evento 1", "endereco":"Rua ...." , "descricao": "descricao", "horario": "10:00"},
+        {"nome": "Evento 2", "endereco":"Rua ...." , "descricao": "descricao", "horario": "10:00"},
+        {"nome": "Evento 2", "endereco":"Rua ...." , "descricao": "descricao", "horario": "10:00"},
+    ]
+    return render_template('index.html', nomeSite="Eventoss", data=eventos)
 
 @app.route("/login")
 def login():
