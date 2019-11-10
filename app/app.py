@@ -64,6 +64,18 @@ def formulario_evento():
     #todo
     return render_template('/cadastro-eventos/formulario.html')
 
+@app.route("/evento/criar", methods=["POTS"])
+def formulario_evento():
+    ##Todo
+    print('evento')
+    return render_template('/cadastro-eventos/formulario.html')
+
+@app.route("/evento/listar", methods=["GET"])
+def formulario_evento():
+    ##Todo
+    print('evento')
+    return render_template('/cadastro-eventos/formulario.html')
+
 
 @app.errorhandler(404)
 def page_not_found(error):
