@@ -4,19 +4,21 @@ from Helper.Validate import Validate
 
 app = Flask(__name__)
 
-@app.route("/")
-def index():
-
-    eventos = [
+eventos = [
         {"nome": "Evento 1", "endereco":"Rua ...." , "descricao": "descricao","data": "21/11/2019" ,"horario": "10:00"},
         {"nome": "Evento 2", "endereco":"Rua ...." , "descricao": "descricao","data": "21/11/2019" ,"horario": "10:00"},
         {"nome": "Evento 2", "endereco":"Rua ...." , "descricao": "descricao","data": "21/11/2019" ,"horario": "10:00"},
     ]
+
+@app.route("/")
+def index():
+
+    
     return render_template('index.html', nomeSite="Eventoss", data=eventos)
 
-@app.route("/login")
-def login():
-    return render_template('login.html')
+@app.route("/formulario-evento")
+def formulario_evento():
+    return render_template('/cadastro-eventos/formulario.html')
 
 @app.route('/autenticar', methods=['POST', 'GET'])
 def autenticar():
@@ -54,28 +56,13 @@ def usuarioIndex():
 
 @app.route("/cadastrar-contato", methods=['POST'])
 def cadastrar_contato():
-    print("test ")
     return jsonify(
         form = request.form
     )
 
-@app.route("/formulario-evento")
-def formulario_evento():
-    #todo
-    return render_template('/cadastro-eventos/formulario.html')
-
-@app.route("/evento/criar", methods=["POTS"])
-def formulario_evento():
-    ##Todo
-    print('evento')
-    return render_template('/cadastro-eventos/formulario.html')
-
-@app.route("/evento/listar", methods=["GET"])
-def formulario_evento():
-    ##Todo
-    print('evento')
-    return render_template('/cadastro-eventos/formulario.html')
-
+@app.route("/cadastrar-evento", methods=['POST'])
+def cadastrar_evento():    
+    return redirect(url_for('index'))
 
 @app.errorhandler(404)
 def page_not_found(error):

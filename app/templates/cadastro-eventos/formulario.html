@@ -1,46 +1,52 @@
-{% extends "../layout.html" %}
+{% extends './layout.html' %}
 {% block content %}
 
-<form action="">
-    <div style="border-left: 4px solid #000;padding: 10px;">
+<form action="{{ url_for('cadastrar_evento')}}" method="POST" style="height: 100vh;"> 
+    <div class="container"> 
         <h3>Dados</h3>
-    
-        <label for="nome">Nome:</label>
-        <input id="nome" type="text" name="nome" autocomplete="off">
-    
-        <label for="data">Data:</label>
-        <input id="data" type="date" name="data">
-        <br>
+        <div class="row form-group">
+            <div class="col-md-4">
+                <label for="nome">Nome:</label>
+                <input id="nome" type="text" name="nome" autocomplete="off" class="form-control"> 
+            </div>    
+            <div class="col-md-4">
+                <label for="data">Data:</label>
+                <input id="data" type="date" name="data" class="form-control">
+            </div>    
+            <div class="col-md-4">
+                <label for="horario">Data:</label>
+                <input id="horario" type="text" name="horario   " class="form-control">
+            </div>    
+            <div class="col-md-3">
+                <label for="descricao">Descrição:</label><br>
+                <textarea id="descricao" rows="4" cols="10" class="form-control"></textarea>
+            </div>    
+        </div>
     </div>
     
-    <div style="border-left: 4px solid #314679;
-        padding: 10px;">
+    <div class="container">
         <h3>Endereço</h3>
-        <br>
-        <label for="rua">Rua:</label>
-        <input id="rua" type="text" name="rua">
-    
-        <label for="numero">nº:</label>
-        <input id="numero" type="text" name="numero">
-    
-        <label for="cidade">Cidade:</label>
-        <select name="cidade">
-        <!-- {% for cidade in cidades %}
-            <option value="{{cidade}}">{{ cidade }}</option>
-        {% endfor %} -->
-            <option value="join">Joinville</option>
-            <option value="sfs">São Francisco do Sul</option>
-        </select>
-        <br>
-    
-        <label for="descricao">Descrição:</label><br>
-        <textarea id="descricao" rows="10" cols="20"></textarea>
-        <!-- <input id="nome" type="text"  name="nome"> -->
+        <div class="row form-group">
+            <div class="col-md-4">
+                <label for="rua">Rua:</label>
+                <input id="rua" type="text" name="rua" class="form-control">            
+            </div>
+            <div class="col-md-3">
+                <label for="numero">nº:</label>
+                <input id="numero" type="text" name="numero" class="form-control">
+            </div>
+            <div class="col-md-4">  
+                <label for="cidade">Cidade:</label>
+                <select name="cidade" class="form-control">
+                    <option value="join">Joinville</option>
+                    <option value="sfs">São Francisco do Sul</option>
+                </select>
+            </div> 
+        </div>
+        <button class="btn btn-success"type="submit">Cadastrar evento</button>
     </div>
-    <div style="padding: 10px;">
-
-    </div>
-    <button type="submit">Cadastrar evento</button>
+    
+   
 </form>
 
 {% endblock %}

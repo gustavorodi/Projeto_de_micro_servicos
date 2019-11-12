@@ -5,18 +5,16 @@
         <h1 class="" style="text-align: center;">{{ nomeSite }}</h1>
         {% for evento in data %}
             <div class="p-2">
-                
+
                 <h3>{{ evento.nome }} - {{ evento.data  }}</h3>
+                
                 <div class="">
                     {{ evento.descricao }}
                 </div>
 
             </div>
-        <!-- {{ data }} -->
-
-
         {% endfor %}  
     </div>
-
+{% include './registro/formulario.html' %} 
 {% endblock %}
 
