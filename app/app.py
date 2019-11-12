@@ -1,6 +1,7 @@
 from flask import Flask, render_template, url_for, request, redirect, jsonify
 from Helper.ConstantesParametro import ConstantesParametro
 from Helper.Validate import Validate
+import requests
 
 app = Flask(__name__)
 
@@ -54,27 +55,38 @@ def usuarioIndex():
 
 @app.route("/cadastrar-contato", methods=['POST'])
 def cadastrar_contato():
-    print("test ")
-    return jsonify(
-        form = request.form
-    )
+    cadastroName = request.form[ConstantesParametro.nome]
+    cadastroEmail = request.form[ConstantesParametro.email]
+
+    cadastro = {
+                    'email': cadastroEmail,
+                    'nome' : cadastroName
+                }
+
+
+    #localhost:8080
+    x = requests.post('http://localhost:3000/person',data=cadastro)
+
+    print(x.text)
+    return x.text
+    # return render_template('/cadastro-usuario/cadastrado.html', nomeSite="cadastro", data=cadastro)
 
 @app.route("/formulario-evento")
 def formulario_evento():
     #todo
     return render_template('/cadastro-eventos/formulario.html')
 
-@app.route("/evento/criar", methods=["POTS"])
-def formulario_evento():
-    ##Todo
-    print('evento')
-    return render_template('/cadastro-eventos/formulario.html')
+# @app.route("/evento/criar", methods=["POTS"])
+# def formulario_evento():
+#     ##Todo
+#     print('evento')
+#     return render_template('/cadastro-eventos/formulario.html')
 
-@app.route("/evento/listar", methods=["GET"])
-def formulario_evento():
-    ##Todo
-    print('evento')
-    return render_template('/cadastro-eventos/formulario.html')
+# @app.route("/evento/listar", methods=["GET"])
+# def formulario_evento():
+#     ##Todo
+#     print('evento')
+#     return render_template('/cadastro-eventos/formulario.html')
 
 
 @app.errorhandler(404)
