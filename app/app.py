@@ -1,6 +1,7 @@
 from flask import Flask, render_template, url_for, request, redirect, jsonify
 from Helper.ConstantesParametro import ConstantesParametro
 from Helper.Validate import Validate
+import requests
 
 app = Flask(__name__)
 
@@ -54,15 +55,26 @@ def registrar():
 def usuarioIndex():
     return render_template('usuarioIndex.html')
 
-@app.route("/cadastrar-contato", methods=['POST'])
-def cadastrar_contato():
-    return jsonify(
-        form = request.form
-    )
-
 @app.route("/cadastrar-evento", methods=['POST'])
 def cadastrar_evento():    
     return redirect(url_for('index'))
+    
+@app.route("/cadastrar-contato", methods=['POST'])
+def cadastrar_contato():
+    cadastroName = request.form[ConstantesParametro.nome]
+    cadastroEmail = request.form[ConstantesParametro.email]
+
+    cadastro = {
+                    'email': cadastroEmail,
+                    'nome' : cadastroName
+                }
+
+
+    #localhost:8080
+    x = requests.post('http://localhost:3000/person',data=cadastro)
+
+    print(x.text)
+    return x.text
 
 @app.errorhandler(404)
 def page_not_found(error):
