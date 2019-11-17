@@ -72,7 +72,20 @@ def cadastrar_evento():
     print(descricao)
     print(rua)
     print(numero)
-    print(cidade)   
+    print(cidade)
+
+    cadastro = {
+                    'nome': nome,
+                    'data' : data,
+                    'horario': horario,
+                    'descricao': descricao,
+                    'rua': rua,
+                    'numero': numero,
+                    'cidade': cidade
+                }
+    
+    requests.post('http://localhost:8000',data=cadastro)
+
     return redirect(url_for('index'))
     
 @app.route("/cadastrar-contato", methods=['POST'])
