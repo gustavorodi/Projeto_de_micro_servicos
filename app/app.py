@@ -56,7 +56,23 @@ def usuarioIndex():
     return render_template('usuarioIndex.html')
 
 @app.route("/cadastrar-evento", methods=['POST'])
-def cadastrar_evento():    
+def cadastrar_evento():
+    print('cadastrar_evento')
+    nome = request.form[ConstantesParametro.nome]
+    data = request.form[ConstantesParametro.data]
+    horario = request.form[ConstantesParametro.horario]
+    descricao = request.form[ConstantesParametro.descricao]
+    rua = request.form[ConstantesParametro.rua]
+    numero = request.form[ConstantesParametro.numero]
+    cidade = request.form[ConstantesParametro.cidade]
+
+    print(nome) 
+    print(data) 
+    print(horario) 
+    print(descricao)
+    print(rua)
+    print(numero)
+    print(cidade)   
     return redirect(url_for('index'))
     
 @app.route("/cadastrar-contato", methods=['POST'])
