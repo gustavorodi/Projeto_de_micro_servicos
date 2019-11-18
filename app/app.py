@@ -15,7 +15,7 @@ eventos = [
 def index():
 
     
-    return render_template('index.html', nomeSite="Eventoss", data=eventos)
+    return render_template('index.html', nomeSite="Eventos", data=eventos)
 
 @app.route("/formulario-evento")
 def formulario_evento():
@@ -66,14 +66,6 @@ def cadastrar_evento():
     numero = request.form[ConstantesParametro.numero]
     cidade = request.form[ConstantesParametro.cidade]
 
-    print(nome) 
-    print(data) 
-    print(horario) 
-    print(descricao)
-    print(rua)
-    print(numero)
-    print(cidade)
-
     cadastro = {
                     'nome': nome,
                     'data' : data,
@@ -100,10 +92,10 @@ def cadastrar_contato():
 
 
     #localhost:8080
-    x = requests.post('http://localhost:3000/person',data=cadastro)
+    requests.post('http://localhost:3000/person',data=cadastro)
 
-    print(x.text)
-    return x.text
+    return render_template('agradecer.html')
+
 
 @app.errorhandler(404)
 def page_not_found(error):
